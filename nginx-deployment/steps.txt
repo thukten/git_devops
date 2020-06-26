@@ -1,0 +1,21 @@
+1. Create a Deployment based on the YAML file:
+ # kubectl apply -f deployment.yaml
+2. Display information about the Deployment:
+ # kubectl describe deployment nginx-deployment
+4. List the pods created by the deployment:
+  #kubectl get pods -l app=nginx
+5. Display information about a Pod:
+ #  kubectl describe pod <pod-name>
+ 
+6. Apply the new YAML file:
+kubectl apply -f deployment-update.yaml
+
+7. Watch the deployment create pods with new names and delete the old pods:
+ # kubectl get pods -l app=nginx
+Scaling the application by increasing the replica count
+8. Apply the new YAML file:
+# kubectl apply -f deployment-scale.yaml
+Verify that the Deployment has four pods:
+# kubectl get pods -l app=nginx
+Delete the deployment by name:
+#kubectl delete deployment nginx-deployment

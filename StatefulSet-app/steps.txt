@@ -1,0 +1,11 @@
+Steps:
+You will need to use two terminal windows. In the first terminal, use kubectl get to watch the creation of the StatefulSet's Pods.
+#kubectl get pods -w -l app=nginx
+In the second terminal, use kubectl apply to create the headless Service and StatefulSet defined in web.yaml.
+#kubectl apply -f web.yaml
+The command above creates two Pods, each running an NGINX webserver. Get the nginx Service...
+#kubectl get service nginx
+#kubectl get statefulset web
+#kubectl get pods -w -l app=nginx
+Get the StatefulSet's Pods:
+#kubectl get pods -l app=nginx
